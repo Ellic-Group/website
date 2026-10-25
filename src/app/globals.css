@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #ffffff;
+    --muted: #8e8e93;
+    --border: #262626;
+
+    /* Official Ellic Spectrum Brand Colors Extracted from Logo */
+    --brand-amber: #FFAF00;
+    --brand-orange: #F46920;
+    --brand-crimson: #F53255;
+    --brand-magenta: #F857C1;
+    --brand-cyan: #29BDFD;
+    --brand-teal: #00CBBF;
+    --brand-green: #01C159;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #000000;
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Brand selection highlight using primary logo amber */
+  ::selection {
+    background-color: #FFAF00;
+    color: #000000;
+  }
+
+  /* Reset all box shadows on buttons and interactive elements */
+  button, a {
+    box-shadow: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Render-style Creative Atmospheric Background Gradients */
+.bg-render-hero {
+  background-color: #000000;
+  background-image: 
+    radial-gradient(110% 100% at 50% -10%, rgba(255, 175, 0, 0.14) 0%, rgba(244, 105, 32, 0.06) 45%, transparent 75%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-render-subpage {
+  background-color: #000000;
+  background-image: 
+    radial-gradient(100% 100% at 50% -15%, rgba(255, 175, 0, 0.12) 0%, rgba(41, 189, 253, 0.04) 50%, transparent 75%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-render-cta {
+  background-color: #000000;
+  background-image: 
+    radial-gradient(ellipse 90% 70% at 50% 120%, rgba(255, 175, 0, 0.16) 0%, rgba(244, 105, 32, 0.08) 45%, transparent 80%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-render-tech {
+  background-color: #000000;
+  background-image: 
+    radial-gradient(110% 100% at 50% -10%, rgba(41, 189, 253, 0.12) 0%, rgba(0, 203, 191, 0.05) 45%, transparent 75%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-render-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* OpenAI style clean subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFAF00;
 }
